@@ -6,7 +6,7 @@ def count_seanses(len_of_working, time_from_last_cleaning, len_of_seans, len_of_
             count_of_time += len_of_seans
             count_of_seans += 1
         count_of_time += len_of_cleaning
-    return count_of_seans
+    return f'При данных условиях, за {len_of_working} минут, в день будет проводиться {count_of_seans} сенсов.'
 
 
 
