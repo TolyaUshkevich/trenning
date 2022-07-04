@@ -1,15 +1,32 @@
-def count_seanses(len_of_working, time_from_last_cleaning, len_of_seans, len_of_cleaning):
-    count_of_time = 0
-    count_of_seans = 0
-    while count_of_time < len_of_working:
-        while count_of_time < time_from_last_cleaning:
-            count_of_time += len_of_seans
-            count_of_seans += 1
-        count_of_time += len_of_cleaning
-    return count_of_seans
+
+def find_beautiful_numbers(num):
+
+    len_num = len(str(num))
+    counter = 0
+    str_num = str(num)
+
+    for i in range(len_num):
+        if (i + 1) % 2 == 1:
+            if int(str_num[i]) % 2 == 1:
+                counter += 1
+        if (i + 1) % 2 == 0:
+            if int(str_num[i]) % 2 == 0:
+                counter += 1
+
+    if counter == len_num:
+        return True
+    else:
+        return False
 
 
+numb = int(input())
+counter2 = 0
+if find_beautiful_numbers(numb) == True:
+    counter2 += 1
 
 
-
-print(count_seanses(int(input()), int(input()), int(input()), int(input())))
+while numb != 0:
+    numb = int(input())
+    if find_beautiful_numbers(numb) == True:
+        counter2 += 1
+print(counter2)
