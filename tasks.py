@@ -18,7 +18,7 @@ def count_seanses(len_of_working, time_from_last_cleaning, len_of_seans, len_of_
     return f'При данных условиях, за {len_of_working} минут, в день будет проводиться {count_of_seans} сенсов.'
 
 
-# now I'm absolutely sure that that works:)
+# now I'm absolutely sure that that works;)
 
 
 text_file = open('texsst.txt', 'r')
