@@ -6,28 +6,30 @@ counter = 0
 let = ''
 
 for s in text:
-    for i in range(len(key)):
-        if 65 < ord(s) < 91:
+    if 64 < ord(s) < 123:
+        if counter + 1 >= len(key):
+            counter = 0
+        let = key[counter]
+        if 64 < ord(s) < 91:
             s = s.lower()
-            if counter >= len(key) - 1:
-                counter = 0
-            let = key[counter]
             if (ord(let) - 96) + (ord(s) - 96) < 26:
                 result += chr(((ord(let) - 96) + (ord(s) - 96)) + 96).upper()
             elif (ord(let) - 96) + (ord(s) - 96) > 26:
                 result += chr(((ord(let) - 96) + (ord(s) - 96) - 26) + 96).upper()
         else:
-            if counter >= len(key) - 1:
+            if counter + 1 >= len(key):
                 counter = 0
             let = key[counter]
             if ord(let) - 96 > 0 and ord(s) - 96 > 0:
-                if (ord(let) - 96) + (ord(s) - 96) < 26:
+                if (ord(let) - 96) + (ord(s) - 96) <= 26:
                     result += chr(((ord(let) - 96) + (ord(s) - 96)) + 96)
                 elif (ord(let) - 96) + (ord(s) - 96) > 26:
                     result += chr(((ord(let) - 96) + (ord(s) - 96) - 26) + 96)
         let = ''
         counter += 1
-        break
+    else:
+        result += s
+
 
 
 print(result)
